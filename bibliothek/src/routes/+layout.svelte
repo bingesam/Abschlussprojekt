@@ -41,4 +41,10 @@
     background-color: black;
     color: white;
   }
+  .nav-link:hover{
+    color: seagreen;
+  }
+  .navbar-brand:hover{
+    color: seagreen;
+  }
 </style>
