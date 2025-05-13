@@ -1,21 +1,28 @@
 <script>
   //let { books } = $props();
-  export let books;
+  export let book;
 </script>
 
 <div class="card">
-<div class="books-card">
-  <div>
-    <img class="img-fluid" src={books.image} alt={books.title} />
-  </div>
-  <div class="details">
-    <div class="title">
-      <a href={"TODO" + books._id}>{books.title}</a>
+  <div class="book-card">
+    <div>
+      <img class="img-fluid" src={book.image} alt={book.title} />
+    </div>
+    <div class="details">
+      <div class="title">
+        <!--<a href={"TODO" + book._id}>{book.title}</a>-->
+        <p><strong>Titel:  </strong> {book.title}</p>
+      </div>
+      <div class="author">
+        <p><strong>Autor: </strong> {book.author}</p>
+      </div>
+      <div class="status">
+        <p><strong>Status: </strong> {book.status}</p>
+      </div>
     </div>
   </div>
-  </div>
   <form method="post" action="?/delete">
-    <input type="hidden" name="id" value={books._id} />
+    <input type="hidden" name="id" value={book._id} />
     <input type="hidden" name="collection" value="books" />
     <button class="btn btn-danger">Delete</button>
   </form>
@@ -27,23 +34,23 @@
     background-color: #444;
 
     transition:
-      transform 0.3s,
+      transform 0.2s,
       box-shadow 0.3s;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
   }
   .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.025);
+    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
   }
-  .books-card {
+  .book-card {
     height: 100%;
     background-color: #444;
     color: white;
     border-radius: 10px;
     flex-direction: column;
-    }
+  }
 
   .img-fluid {
     width: 100%;
@@ -64,22 +71,12 @@
     font-size: 1.2em;
     margin-bottom: 0.5em;
   }
-  .title a {
-    color: #f8d210;
-    text-decoration: none;
-  }
-  .title a:hover {
-    text-decoration: underline;
+
+  .btn-danger {
+    margin: 15px;
   }
 
-
- 
-.btn-danger {
-  margin: 15px;
-}
-
-.btn-danger:hover {
-  background-color: #912530;
-}
-
+  .btn-danger:hover {
+    background-color: #912530;
+  }
 </style>
