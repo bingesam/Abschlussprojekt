@@ -6,6 +6,7 @@ const client = new MongoClient(DB_URI);
 await client.connect();
 const db = client.db("MiniBibliothekDB"); // select database
 
+//test
 
 // Get all books
 async function getBooks() {
