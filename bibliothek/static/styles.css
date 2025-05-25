@@ -16,7 +16,6 @@ body {
 .navbar-nav .nav-link {
     color: white !important;
     /* Sets text color to white */
-    font-family: 'Cinzel', serif;
     transition: color 0.3s ease;
 }
 
@@ -25,10 +24,13 @@ body {
 }
 
 .navbar-brand {
-    color: white !important;
     /* Ensures the brand name is white */
     font-size: 1.5rem;
     transition: color 0.3s ease;
+}
+
+.navbar-brand:hover{
+    color: seagreen;
 }
 
 .col-md-6 {
@@ -62,9 +64,9 @@ body {
     text-align: center;
 }
 
-.card-body {
+/* .card-body {
     background-color: #1b1b1b;
-}
+} */
 
 .btn:hover {
     background-color: #343a40;

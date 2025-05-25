@@ -1,3 +1,8 @@
+<script>
+    export let data;
+    //const stats = data.stats;
+</script>
+
 <div class="container mt-3">
     <div class="hero-section svelte-16ktbxa">
         <div class="hero-content svelte-16ktbxa">
@@ -8,19 +13,49 @@
 </div>
 
 <section class="stats-section svelte-16ktbxa">
-    <div class="container">
-        <div class="stats-grid svelte-16ktbxa">
-            <div class="stat-card svelte-16ktbxa">
-                <span class="number svelte-16ktbxa">6</span>
-                <span class="label svelte-16ktbxa">Gelesen</span>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <div
+                class="card text-white text-center"
+                style="background-color: seagreen;"
+            >
+                <div class="card-body">
+                    <h4>Read</h4>
+                    <p>{data.stats.read}</p>
+                </div>
             </div>
-            <div class="stat-card svelte-16ktbxa">
-                <span class="number svelte-16ktbxa">2</span>
-                <span class="label svelte-16ktbxa">Gerade am lesen</span>
+        </div>
+        <div class="col-md-3">
+            <div
+                class="card text-white text-center"
+                style="background-color: goldenrod;"
+            >
+                <div class="card-body">
+                    <h4>Currently Reading</h4>
+                    <p>{data.stats["currently reading"]}</p>
+                </div>
             </div>
-            <div class="stat-card svelte-16ktbxa">
-                <span class="number svelte-16ktbxa">11</span>
-                <span class="label svelte-16ktbxa">Noch offen</span>
+        </div>
+        <div class="col-md-3">
+            <div
+                class="card text-white text-center"
+                style="background-color: steelblue;"
+            >
+                <div class="card-body">
+                    <h4>On Hold</h4>
+                    <p>{data.stats["on hold"]}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div
+                class="card text-white text-center"
+                style="background-color: firebrick;"
+            >
+                <div class="card-body">
+                    <h4>Wanna Read</h4>
+                    <p>{data.stats["wanna read"]}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -58,9 +93,24 @@
             typing 4s steps(30, end),
             blink-caret 0.75s step-end infinite;
     }
+    .col-md-3 {
+        margin-bottom: 3em;
+    }
+    .row {
+        margin-top: 5rem;
+    }
+    .card {
+        border-radius: 1rem;
+        transition: transform 0.2s ease;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
 
-    .stats-section{
-        color: red;
+    p{
+        font-size: 1.5em;
+        margin: 0;
+        color: white;
     }
 
     @keyframes typing {
@@ -78,6 +128,4 @@
             border-color: transparent;
         }
     }
-
-
 </style>

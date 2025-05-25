@@ -54,7 +54,7 @@
 
   .img-fluid {
     width: 100%;
-    height: 200px;
+    height: 330px;
     object-fit: cover;
     background-color: #302f2f;
   }
@@ -69,7 +69,7 @@
   .title {
     font-weight: bold;
     font-size: 1.2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
   }
 
   .btn-danger {
@@ -78,5 +78,9 @@
 
   .btn-danger:hover {
     background-color: #912530;
+  }
+
+  p {
+    margin: 0.2em 0;
   }
 </style>
