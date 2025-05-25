@@ -23,7 +23,7 @@
   </div>
   <form method="post" action="?/delete">
     <input type="hidden" name="id" value={book._id} />
-    <input type="hidden" name="collection" value="books" />
+    <input type="hidden" name="books" value="books" />
     <button class="btn btn-danger">Delete</button>
   </form>
 </div>

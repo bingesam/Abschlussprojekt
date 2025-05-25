@@ -4,7 +4,7 @@
 
 <h2>Neues Buch hinzufügen</h2>
 
-<form method="POST">
+<form method="POST" action="?/create">
   <label for="title" class="form-label">Titel</label>
   <input type="text" name="title" id="title" class="form-control" required />
 

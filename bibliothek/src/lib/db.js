@@ -48,7 +48,7 @@ async function getBook(id) {
 
 //create new book entry
 async function createBook(book) {
-  book.image = "/TODO";
+  book.image = "/science2.png";
   try {
     const collection = db.collection("books");
     const result = await collection.insertOne(book);
@@ -84,5 +84,6 @@ async function deleteBook(id) {
 export default{
     getBooks,
     getBook,
-    createBook
+    createBook,
+    deleteBook
 };

@@ -1,0 +1,71 @@
+body {
+    background-color: #1e1e1e;
+    /* Dark gray background */
+    color: white;
+    /* Default text color for readability */
+    margin: 0;
+    /* Remove default margin */
+    /* Optional: Set a default font */
+}
+
+.bg-black {
+    background-color: #000 !important;
+    /* Ensures the navbar background is black */
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    /* Sets text color to white */
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: seagreen !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    /* Ensures the brand name is white */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.col-md-6 {
+    display: flex;
+}
+
+.btn-primary {
+    color: black;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: seagreen;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary {
+    margin-top: 10px;
+}
+
+.card {
+    background: #2c2c2c;
+    border-radius: 10px;
+    color: white;
+    box-shadow: rgb(17, 17, 17) 0px 0px 50px;
+    margin-top: 20px;
+}
+
+.card-header {
+    background: seagreen;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.card-body {
+    background-color: #1b1b1b;
+}
+
+.btn:hover {
+    background-color: #343a40;
+}
