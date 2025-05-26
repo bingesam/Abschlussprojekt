@@ -28,6 +28,15 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/create">Hinzufügen</a>
       </div>
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/bücherreihen">Bücherreihen</a>
+      </div>
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/genres">Genres</a>
+      </div>
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/rating">Rating</a>
+      </div>
     </div>
   </div>
 </nav>
