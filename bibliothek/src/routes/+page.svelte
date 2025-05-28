@@ -1,7 +1,5 @@
 <script>
-    //export let data;
     const {books, data} = $props();
-    //const stats = data.stats;
 </script>
 
 <div class="container mt-3">
@@ -86,10 +84,10 @@
         font-weight: bold;
         color: white;
         overflow: hidden; /* Ensures the content is not revealed until the animation */
-        border-right: 0.15em solid orange; /* The typwriter cursor */
-        white-space: nowrap; /* Keeps the content on a single line */
-        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-        letter-spacing: 0.15em; /* Adjust as needed */
+        border-right: 0.15em solid orange; /*typwriter cursor*/
+        white-space: nowrap; /*text auf einer single line*/
+        margin: 0 auto;
+        letter-spacing: 0.15em;
         animation:
             typing 4s steps(30, end),
             blink-caret 0.75s step-end infinite;

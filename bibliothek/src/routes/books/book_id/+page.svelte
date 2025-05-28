@@ -1,6 +1,4 @@
 <script>
-    //let {data} = $props();
-    //export let data;
     const {data} = $props();
     const book = data.book;
 </script>
