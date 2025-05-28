@@ -1,6 +1,6 @@
 <script>
-  //let { books } = $props();
-  export let book;
+  const { book } = $props();
+  //export let book;
 </script>
 
 <div class="card">
