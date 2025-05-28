@@ -81,9 +81,30 @@ async function deleteBook(id) {
   return null;
 }
 
+
+// Get all series
+async function getSeries() {
+  let series = [];
+  try {
+    const collection = db.collection("series");
+    const query = {};
+
+    // Get all objects that match the query
+    series = await collection.find(query).toArray();
+    series.forEach((serie) => {
+      serie._id = serie._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return series;
+}
+
 export default{
     getBooks,
     getBook,
     createBook,
-    deleteBook
+    deleteBook,
+    getSeries
 };

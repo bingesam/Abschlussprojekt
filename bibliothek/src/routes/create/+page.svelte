@@ -1,5 +1,8 @@
 <script>
-  const { form } = $props();
+  import { props, state } from 'svelte';
+
+  const { form, series } = props();
+  const selectedSeries = state("");
 </script>
 
 <h1>Buch hinzufügen</h1>
@@ -8,11 +11,23 @@
   <div class="row g-3">
     <div class="col">
       <label for="title" class="form-label">Titel</label>
-      <input name="title" type="text" class="form-control" placeholder="Titel eingeben" required />
+      <input
+        name="title"
+        type="text"
+        class="form-control"
+        placeholder="Titel eingeben"
+        required
+      />
     </div>
     <div class="col">
       <label for="author" class="form-label">Autor</label>
-      <input name="author" type="text" class="form-control" placeholder="Autor eingeben" required />
+      <input
+        name="author"
+        type="text"
+        class="form-control"
+        placeholder="Autor eingeben"
+        required
+      />
     </div>
   </div>
 
@@ -43,15 +58,34 @@
   <div class="row g-3">
     <div class="col">
       <label for="series" class="form-label">Teil einer Serie?</label>
-      <select name="series" class="form-control" required>
-        <option value="" disabled selected>Wähle deine Antwort...</option>
-        <option value="yes">Ja</option>
-        <option value="no">Nein</option>
+      <select
+        bind:value={$selectedSeries}
+        class="form-control"
+        name="series_id"
+      >
+        <option value="" disabled selected>Wähle eine Buchreihe...</option>
+        {#each series as s}
+          <option value={s._id}>{s.name}</option>
+        {/each}
       </select>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Speichern</button>
+  {#if selectedSeries === "yes"}
+    <div class="row g-3 mt-2">
+      <div class="col">
+        <label for="series_id" class="form-label">Welche Serie?</label>
+        <select name="series_id" class="form-control">
+          <option value="" disabled selected>Wähle eine Bücherreihe...</option>
+          {#each series as s}
+            <option value={s._id}>{s.name}</option>
+          {/each}
+        </select>
+      </div>
+    </div>
+  {/if}
+
+  <button type="submit" class="btn btn-primary mt-3">Speichern</button>
 </form>
 
 {#if form?.success}
@@ -59,5 +93,3 @@
 {:else if form?.error}
   <div class="alert alert-danger mt-3">{form.error.message}</div>
 {/if}
-
-

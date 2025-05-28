@@ -1,22 +1,3 @@
-/* import db from "$lib/db";
-
-export const actions = {
-  default: async ({ request }) => {
-    const data = await request.formData();
-    const book = {
-      title: data.get("title"),
-      author: data.get("author"),
-      
-    };
-
-    await db.createBook(book);
-
-    return {
-      success: true
-    };
-  }
-}; */
-
 import db from "$lib/db";
 
 function getImageByGenre(genre) {
@@ -47,7 +28,7 @@ export const actions = {
         status: data.get("status"),
         genre: genre,
         image: getImageByGenre(genre),
-        series_id: isSeries ? getRandomSeriesId() : null
+        series_id: data.get("series_id") || null
       };
 
       await db.createBook(book);
@@ -59,3 +40,8 @@ export const actions = {
     }
   }
 };
+
+export async function load() {
+  const series = await db.getSeries();
+  return { series };
+}
