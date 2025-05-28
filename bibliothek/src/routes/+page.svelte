@@ -1,5 +1,6 @@
 <script>
-    export let data;
+    //export let data;
+    const {books, data} = $props();
     //const stats = data.stats;
 </script>
 
