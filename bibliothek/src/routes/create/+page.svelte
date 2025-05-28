@@ -1,5 +1,5 @@
 <script>
-  let { form } = $props();
+  const { form } = $props();
 </script>
 
 <h1>Buch hinzufügen</h1>

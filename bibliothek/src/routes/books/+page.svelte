@@ -2,7 +2,7 @@
   //export let data;
   //export let book;
   import BookCard from "$lib/components/BookCard.svelte";
-  let {data} = $props();
+  const {data} = $props();
 </script>
 
 <h2>Library</h2>

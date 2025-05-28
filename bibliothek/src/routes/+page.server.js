@@ -4,7 +4,7 @@ export async function load() {
   const books = await db.getBooks();
 
   const stats = {
-    read: 0,
+    'read': 0, //wird auf 0 gesetzt für den anfang, da dies ein zähler ist
     'currently reading': 0,
     'on hold': 0,
     'wanna read': 0
@@ -12,8 +12,8 @@ export async function load() {
 
   for (const book of books) {
     const status = book.status; 
-    if (stats.hasOwnProperty(status)) {
-      stats[status]++;
+    if (status in stats) { 
+      stats[status]++; //zähler erhöhen
     }
   }
 
