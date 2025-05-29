@@ -83,28 +83,47 @@ async function deleteBook(id) {
 
 
 // Get all series
+// Get all series
 async function getSeries() {
   let series = [];
   try {
     const collection = db.collection("series");
     const query = {};
-
-    // Get all objects that match the query
     series = await collection.find(query).toArray();
-    series.forEach((serie) => {
-      serie._id = serie._id.toString(); // convert ObjectId to String
-    });
   } catch (error) {
-    console.log(error);
-    // TODO: errorhandling
+    console.log("Fehler beim Laden der Serien:", error);
   }
   return series;
 }
+
+
+// Get series by id
+async function getSerie(id) {
+  let serie = null;
+  try {
+    const collection = db.collection("series");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    serie = await collection.findOne(query);
+
+    if (!serie) {
+      console.log("No serie with id " + id);
+      // TODO: error handling
+    } else {
+      serie._id = serie._id.toString(); // convert ObjectId to String
+    }
+  } catch (error) {
+    // TODO: error handling
+    console.log(serie.message);
+  }
+  return serie;
+}
+
 
 export default{
     getBooks,
     getBook,
     createBook,
     deleteBook,
-    getSeries
+    getSeries,
+    getSerie
 };

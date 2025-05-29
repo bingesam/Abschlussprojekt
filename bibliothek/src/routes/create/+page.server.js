@@ -10,17 +10,12 @@ function getImageByGenre(genre) {
   return images[genre] || "/default.jpg";
 }
 
-function getRandomSeriesId() {
-  return Math.floor(Math.random() * 99) + 1; // beliebige ID
-}
-
 export const actions = {
   create: async ({ request }) => {
     try {
       const data = await request.formData();
 
       const genre = data.get("genre");
-      const isSeries = data.get("series") === "yes";
 
       const book = {
         title: data.get("title"),
@@ -28,7 +23,7 @@ export const actions = {
         status: data.get("status"),
         genre: genre,
         image: getImageByGenre(genre),
-        series_id: data.get("series_id") || null
+        series_id: data.get("series_id") || null // Optional: Nur setzen, wenn vorhanden
       };
 
       await db.createBook(book);
@@ -45,3 +40,5 @@ export async function load() {
   const series = await db.getSeries();
   return { series };
 }
+
+
