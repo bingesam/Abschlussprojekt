@@ -1,11 +1,19 @@
 <script>
-  let { form, series } = $props();
+  //const { form, series } = $props();
   //const { form, series } = props();
-  let selectedSeries = $state(null); 
-  function updateSelectedSeries(value) {
+  //const {series} = $props();
+  //let selectedSeries = $state(null);
+  const { series, form } = $props();
+/*   console.log("Series in Svelte component:", series);
+  console.log(
+    "Anzahl der Series in Svelte component:",
+    series ? series.length : 0,
+  ); */
+/*   function updateSelectedSeries(value) {
     selectedSeries = value;
-  }
+  } */
 </script>
+
 
 <!-- <script>
   import { props, state } from "svelte";
@@ -63,21 +71,38 @@
     </div>
   </div>
 
-  <div class="row g-3">
+   <div class="row g-3">
     <div class="col">
-      <label for="series" class="form-label">Teil einer Serie?</label>
-      <select
-        name="series"
-        onchange={(e) => selectedSeries.set(e.target.value)}
-      >
-        <option value="" disabled selected>Wähle eine Option...</option>
-        <option value="yes">Ja</option>
-        <option value="no">Nein</option>
+      <label for="series" class="form-label">Teil welcher Serie?</label>
+      <select name="series" class="form-control">
+        <option value="" disabled selected>Wähle die Bücherreihe...</option>
+        <option value="Game of Thrones">Game of Thrones</option>
+        <option value="Percy Jackson">Percy Jackson</option>
+        <option value="The Maze Runner">The Maze Runner</option>
+        <option value="Harry Potter">Harry Potter</option>
+        <option value="Twilight">Twilight</option>
+        <option value="Divergent">Divergent</option>
+        <option value="The Hunger Games">The Hunger Games</option>
+        <option value="The Lord of the Rings">The Lord of the Rings</option>
+        <option value="The Chronicles of Narnia">The Chronicles of Narnia</option>
+        <option value="The Witcher">The Witcher</option>
+        <option value="The Selection">The Selection</option>
       </select>
     </div>
   </div>
+<!--   <div class="row g-3">
+    <div class="col">
+      <label for="series" class="form-label">Teil welcher Serie?</label>
+      <select name="series" class="form-control" required>
+        <option value="" disabled selected>Wähle eine Buchreihe...</option>
+        {#each series as serie}
+          <option value={serie.name}>{serie.name}</option>
+        {/each}
+      </select>
+    </div>
+  </div> -->
 
-  {#if $selectedSeries === "yes"}
+  <!--   {#if $selectedSeries === "yes"}
     <div class="row g-3">
       <div class="col">
         <label for="series_id" class="form-label">Buchreihe wählen</label>
@@ -89,7 +114,7 @@
         </select>
       </div>
     </div>
-  {/if}
+  {/if} -->
 
   <button type="submit" class="btn btn-primary mt-3">Speichern</button>
 </form>

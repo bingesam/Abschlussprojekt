@@ -83,7 +83,6 @@ async function deleteBook(id) {
 
 
 // Get all series
-// Get all series
 async function getSeries() {
   let series = [];
   try {
@@ -97,7 +96,7 @@ async function getSeries() {
 }
 
 
-// Get series by id
+// Get serie by id
 async function getSerie(id) {
   let serie = null;
   try {
