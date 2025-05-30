@@ -6,6 +6,7 @@
 <div class="container">
     <div class="header">
         <h3>Genres</h3>
+        <p><i>Images generated with ChatGPT and DALL-E</i></p>
         <p class="subtitle">{data.genres.length} Genres in der Bibliothek</p>
     </div>
 

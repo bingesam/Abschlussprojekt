@@ -6,7 +6,7 @@
     <div class="hero-section svelte-16ktbxa">
         <div class="hero-content svelte-16ktbxa">
             <h1 class="typewriter svelte-16ktbxa">Welcome to MiniBibliothek</h1>
-            <!--<p class="fade-in velte-16ktbxa">Your p text</p>-->
+            <p><i>Image generated with ChatGPT and DALL-E</i></p>
         </div>
     </div>
 </div>
