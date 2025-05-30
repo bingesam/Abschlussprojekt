@@ -171,6 +171,19 @@ async function getBookCountsByGenre() {
   }, {});
 }
 
+// Get books by rating
+async function getBooksByRating(stars) {
+  const books = await db.collection('books')
+    .find({ rating: stars })
+    .toArray();
+
+  return books.map(book => ({
+    ...book,
+    _id: book._id.toString()
+  }));
+}
+
+
 
 export default{
     getBooks,
@@ -181,5 +194,6 @@ export default{
     getSerie,
     getGenres,
     getGenre,
-    getBookCountsByGenre
+    getBookCountsByGenre,
+    getBooksByRating
 };

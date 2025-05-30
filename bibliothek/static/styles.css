@@ -6,6 +6,8 @@ body {
     margin: 0;
     /* Remove default margin */
     /* Optional: Set a default font */
+    padding-bottom: 4rem;
+
 }
 
 .bg-black {
@@ -29,7 +31,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
     color: seagreen;
 }
 
