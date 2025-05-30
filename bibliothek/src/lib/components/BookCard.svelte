@@ -10,7 +10,7 @@
     <div class="details">
       <div class="title">
         <!--<a href={"TODO" + book._id}>{book.title}</a>-->
-        <p><strong>Titel:  </strong> {book.title}</p>
+        <p><strong>Titel: </strong> {book.title}</p>
       </div>
       <div class="author">
         <p><strong>Autor: </strong> {book.author}</p>
@@ -23,11 +23,20 @@
       </div>
     </div>
   </div>
-  <form method="post" action="?/delete">
+<div class="button-row">
+  <!-- Delete -->
+  <form method="post" action="?/delete" class="button-form">
     <input type="hidden" name="id" value={book._id} />
     <input type="hidden" name="books" value="books" />
-    <button class="btn btn-danger">Delete</button>
+    <button type="submit" class="btn btn-danger w-100">Delete</button>
   </form>
+
+  <!-- Update -->
+  <form method="get" action={`/books/${book._id}`} class="button-form">
+    <button type="submit" class="btn btn-warning w-100">Update</button>
+  </form>
+</div>
+
 </div>
 
 <style>
@@ -74,17 +83,29 @@
     margin-bottom: 0.2em;
   }
 
-  .btn-danger {
-    /* margin: 15px;*/
-    margin-bottom: 0.8em;
-    margin-left: 0.8em;
-  }
-
   .btn-danger:hover {
     background-color: #912530;
   }
 
   p {
     margin: 0.2em 0;
+  }
+
+  .button-row {
+    display: flex;
+    gap: 0.5rem; /*abstand zwischen buttons */
+    padding: 0 0.8em 0.8em;
+  }
+
+  .button-form {
+    flex: 1;
+  }
+
+  .btn-danger:hover {
+    background-color: #912530;
+  }
+
+  .btn-warning:hover {
+    background-color: #b57a00;
   }
 </style>

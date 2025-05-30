@@ -183,6 +183,27 @@ async function getBooksByRating(stars) {
   }));
 }
 
+// update book by id
+async function updateBook(id, updatedData) {
+  try {
+    const collection = db.collection("books");
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updatedData }
+    );
+
+    if (result.modifiedCount === 0) {
+      console.log("No changes made to book with id " + id);
+    } else {
+      console.log("Book with id " + id + " has been updated.");
+    }
+
+    return result;
+  } catch (error) {
+    console.log("Update error:", error.message);
+    return null;
+  }
+}
 
 
 export default{
@@ -195,5 +216,6 @@ export default{
     getGenres,
     getGenre,
     getBookCountsByGenre,
-    getBooksByRating
+    getBooksByRating,
+    updateBook
 };
