@@ -111,12 +111,44 @@ async function getSerie(id) {
       serie._id = serie._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
-    // TODO: error handling
     console.log(serie.message);
   }
   return serie;
 }
 
+
+// Get all genres
+async function getGenres() {
+  let genres = [];
+  try {
+    const collection = db.collection("genres");
+    const query = {};
+    genres = await collection.find(query).toArray();
+  } catch (error) {
+    console.log("Fehler beim Laden der Genren:", error);
+  }
+  return genres;
+}
+
+// Get genre by id
+async function getGenre(id) {
+  let genre = null;
+  try {
+    const collection = db.collection("genres");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    genre = await collection.findOne(query);
+
+    if (!genre) {
+      console.log("No genre with id " + id);
+      // TODO: error handling
+    } else {
+      genre._id = genre._id.toString(); // convert ObjectId to String
+    }
+  } catch (error) {
+    console.log(genre.message);
+  }
+  return genre;
+}
 
 export default{
     getBooks,
@@ -124,5 +156,7 @@ export default{
     createBook,
     deleteBook,
     getSeries,
-    getSerie
+    getSerie,
+    getGenres,
+    getGenre
 };

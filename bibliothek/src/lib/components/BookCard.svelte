@@ -18,6 +18,9 @@
       <div class="status">
         <p><strong>Status: </strong> {book.status}</p>
       </div>
+      <div class="rating">
+        <p><strong>Stars: </strong> {book.rating}</p>
+      </div>
     </div>
   </div>
   <form method="post" action="?/delete">
@@ -29,7 +32,7 @@
 
 <style>
   .card {
-    height: 550px;
+    height: 570px;
     background-color: #444;
 
     transition:
@@ -53,7 +56,7 @@
 
   .img-fluid {
     width: 100%;
-    height: 330px;
+    height: 320px;
     object-fit: cover;
     background-color: #302f2f;
   }
@@ -72,7 +75,9 @@
   }
 
   .btn-danger {
-    margin: 15px;
+    /* margin: 15px;*/
+    margin-bottom: 0.8em;
+    margin-left: 0.8em;
   }
 
   .btn-danger:hover {
