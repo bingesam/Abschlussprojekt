@@ -22,7 +22,7 @@
 </div>
 
 <style>
-  h1 {
+  h3 {
     text-align: center;
     margin-bottom: 2rem;
     color: white;
