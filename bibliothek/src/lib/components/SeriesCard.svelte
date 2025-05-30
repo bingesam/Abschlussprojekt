@@ -17,29 +17,33 @@
 
 <style>
   .card {
-    height: 280px; 
+    height: 280px;
     background-color: darkgreen;
-    transition: transform 0.2s, box-shadow 0.3s;
+    transition:
+      transform 0.2s,
+      box-shadow 0.3s;
     border: none;
     border-radius: 15px;
     overflow: hidden;
     margin-bottom: 1rem;
   }
-  
+
   .card:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
-  
+
   .series-card {
     height: 100%;
     background-color: darkgreen;
     color: white;
     border-radius: 15px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
+
   .details {
     padding: 1.5rem;
     flex-grow: 1;
@@ -65,5 +69,4 @@
     line-height: 1.4;
     overflow: hidden;
   }
-
 </style>

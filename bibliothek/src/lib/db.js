@@ -150,6 +150,28 @@ async function getGenre(id) {
   return genre;
 }
 
+
+// counter for books by genre
+async function getBookCountsByGenre() {
+  const books = await db.collection('books');
+
+  const result = await books.aggregate([
+    {
+      $group: {
+        _id: '$genre_id',
+        count: { $sum: 1 }
+      }
+    }
+  ]).toArray();
+
+  // convert to a dictionary: { genre_id: count }
+  return result.reduce((acc, curr) => {
+    acc[curr._id] = curr.count;
+    return acc;
+  }, {});
+}
+
+
 export default{
     getBooks,
     getBook,
@@ -158,5 +180,6 @@ export default{
     getSeries,
     getSerie,
     getGenres,
-    getGenre
+    getGenre,
+    getBookCountsByGenre
 };

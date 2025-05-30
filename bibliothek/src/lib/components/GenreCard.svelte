@@ -1,12 +1,14 @@
 <script>
-  const { genres } = $props();
+  const { genres, count } = $props();
+  const backgroundImage = `/` + genres.name.toLowerCase().replace(/\s+/g, '_') + `_background.png`;
 </script>
 
-<div class="card">
+<div class="card" style="background-image: url({backgroundImage});">
   <div class="genres-card">
     <div class="details">
       <div class="name">
         <h3>{genres.name}</h3>
+        <p>{genres.count} Bücher</p>
       </div>
     </div>
   </div>
@@ -14,45 +16,51 @@
 
 <style>
   .card {
-    height: 280px; 
-    background-color: darkgreen;
-    transition: transform 0.2s, box-shadow 0.3s;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     border: none;
     border-radius: 15px;
     overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
     margin-bottom: 1rem;
+    position: relative;
   }
-  
+
   .card:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
-  
+
   .genres-card {
     height: 100%;
-    background-color: darkgreen;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* halbtransparentes Overlay */
     color: white;
-    border-radius: 15px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
+
   .details {
-    padding: 1.5rem;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .name h3 {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 3rem;
     margin: 0;
     color: #fff;
-    line-height: 1.3;
-    word-wrap: break-word;
   }
 
+  .name p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ddd;
+  }
 </style>
