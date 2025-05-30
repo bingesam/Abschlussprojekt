@@ -3,7 +3,7 @@
   const { series, genres } = data;
 </script>
 
-<h1>Buch hinzufügen</h1>
+<h3>Buch hinzufügen</h3>
 
 <form method="POST" action="?/create">
   <div class="row g-3">
@@ -84,3 +84,10 @@
 {:else if form?.error}
   <div class="alert alert-danger mt-3">{form.error.message}</div>
 {/if}
+
+
+<style>
+  .form-label {
+    margin-top: 1rem; 
+  }
+</style>

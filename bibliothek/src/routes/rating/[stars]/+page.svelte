@@ -2,7 +2,7 @@
   const { data } = $props();
 </script>
 
-<h1>Bücher mit {data.stars} Sternen</h1>
+<h3>Bücher mit {data.stars} Sternen</h3>
 
 {#if data.books.length === 0}
   <p>Keine Bücher mit dieser Bewertung.</p>

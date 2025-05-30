@@ -2,7 +2,7 @@
   const { data } = $props();
 </script>
 
-<h1>Bewertungen</h1>
+<h3>Bewertungen</h3>
 
 <div class="grid">
   {#each data.ratings as rating}

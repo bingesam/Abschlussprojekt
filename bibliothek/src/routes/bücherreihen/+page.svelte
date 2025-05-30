@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="header">
-    <h1>Bücherreihen</h1>
+    <h3>Bücherreihen</h3>
     <p class="subtitle">{data.series.length} Bücherreihen in der Bibliothek</p>
   </div>
 
@@ -28,7 +28,7 @@
     text-align: center;
     margin-bottom: 3rem;
   }
-  .header h1 {
+  .header h3 {
     font-size: 2.5rem;
     color: #fff;
     margin-bottom: 0.5rem;

@@ -3,7 +3,7 @@
   const {data} = $props();
 </script>
 
-<h2>Library</h2>
+<h3>Alle Bücher in deiner Bibliothek</h3>
 <div class="row">
   {#each data.books as book}
     <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
