@@ -1,13 +1,7 @@
-import db from '$lib/db';
-
-/* export async function load() {
-  const series = await db.getSeries();
-  return { series };
-} */
-
+import db from '$lib/db.js';
 
 export async function load() {
   return {
-    books: await db.getSeries()
+    series: await db.getSeries() 
   };
 }
