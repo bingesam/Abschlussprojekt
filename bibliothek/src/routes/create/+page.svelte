@@ -1,25 +1,7 @@
 <script>
-  //const { form, series } = $props();
-  //const { form, series } = props();
-  //const {series} = $props();
-  //let selectedSeries = $state(null);
-  const { series, form } = $props();
-/*   console.log("Series in Svelte component:", series);
-  console.log(
-    "Anzahl der Series in Svelte component:",
-    series ? series.length : 0,
-  ); */
-/*   function updateSelectedSeries(value) {
-    selectedSeries = value;
-  } */
+  const { form, data } = $props();
+  const { series, genres } = data;
 </script>
-
-
-<!-- <script>
-  import { props, state } from "svelte";
-  const { form, series } = props();
-  const selectedSeries = state("");
-</script> -->
 
 <h1>Buch hinzufügen</h1>
 
@@ -63,58 +45,36 @@
       <label for="genre" class="form-label">Genre</label>
       <select name="genre" class="form-control" required>
         <option value="" disabled selected>Wähle das Genre...</option>
-        <option value="crime">Crime</option>
-        <option value="mystery">Mystery</option>
-        <option value="romance">Romance</option>
-        <option value="science">Science</option>
-      </select>
-    </div>
-  </div>
-
-   <div class="row g-3">
-    <div class="col">
-      <label for="series" class="form-label">Teil welcher Serie?</label>
-      <select name="series" class="form-control">
-        <option value="" disabled selected>Wähle die Bücherreihe...</option>
-        <option value="Game of Thrones">Game of Thrones</option>
-        <option value="Percy Jackson">Percy Jackson</option>
-        <option value="The Maze Runner">The Maze Runner</option>
-        <option value="Harry Potter">Harry Potter</option>
-        <option value="Twilight">Twilight</option>
-        <option value="Divergent">Divergent</option>
-        <option value="The Hunger Games">The Hunger Games</option>
-        <option value="The Lord of the Rings">The Lord of the Rings</option>
-        <option value="The Chronicles of Narnia">The Chronicles of Narnia</option>
-        <option value="The Witcher">The Witcher</option>
-        <option value="The Selection">The Selection</option>
-      </select>
-    </div>
-  </div>
-<!--   <div class="row g-3">
-    <div class="col">
-      <label for="series" class="form-label">Teil welcher Serie?</label>
-      <select name="series" class="form-control" required>
-        <option value="" disabled selected>Wähle eine Buchreihe...</option>
-        {#each series as serie}
-          <option value={serie.name}>{serie.name}</option>
+        {#each genres as g}
+          <option value={g._id}>{g.name}</option>
         {/each}
       </select>
     </div>
-  </div> -->
+  </div>
 
-  <!--   {#if $selectedSeries === "yes"}
-    <div class="row g-3">
-      <div class="col">
-        <label for="series_id" class="form-label">Buchreihe wählen</label>
-        <select name="series_id" class="form-control" required>
-          <option value="" disabled selected>Wähle eine Buchreihe...</option>
-          {#each series as serie}
-            <option value={serie._id}>{serie.name}</option>
-          {/each}
-        </select>
-      </div>
+  <div class="row g-3">
+    <div class="col">
+      <label for="series_id" class="form-label">Teil welcher Serie?</label>
+      <select name="series" class="form-control">
+        <option value="" disabled selected>Wähle die Bücherreihe...</option>
+        {#each series as s}
+          <option value={s._id}>{s.name}</option>
+        {/each}
+      </select>
     </div>
-  {/if} -->
+
+    <div class="col">
+      <label for="rating" class="form-label">Bewertung</label>
+      <select name="rating" class="form-control" required>
+        <option value="" disabled selected>Wähle deine Bewertung...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
 
   <button type="submit" class="btn btn-primary mt-3">Speichern</button>
 </form>
