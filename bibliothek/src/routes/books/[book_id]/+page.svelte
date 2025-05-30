@@ -5,7 +5,6 @@
 
 <h1>Buch bearbeiten</h1>
 
-
 <form method="POST">
     <label
         >Titel:
@@ -22,7 +21,9 @@
         <select name="status" required>
             <option selected={book.status === "read"}>read</option>
             <option selected={book.status === "on hold"}>on hold</option>
-            <option selected={book.status === "currently reading"}>currently reading</option>
+            <option selected={book.status === "currently reading"}
+                >currently reading</option
+            >
             <option selected={book.status === "wanna read"}>wanna read</option>
         </select>
     </label>
@@ -65,13 +66,11 @@
     <a href="/books" class="btn btn-secondary w-100 mt-3">Zurück</a>
 </form>
 
-
 {#if form?.success}
-  <div class="alert alert-success mt-3">Buch erfolgreich geändert!</div>
+    <div class="alert alert-success mt-3">Buch erfolgreich geändert!</div>
 {:else if form?.error}
-  <div class="alert alert-danger mt-3">{form.error.message}</div>
+    <div class="alert alert-danger mt-3">{form.error.message}</div>
 {/if}
-
 
 <style>
     form {
