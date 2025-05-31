@@ -101,7 +101,9 @@ async function getSerie(id) {
   let serie = null;
   try {
     const collection = db.collection("series");
-    const query = { _id: new ObjectId(id) }; // filter by id
+    //const query = { _id: new ObjectId(id) }; // filter by id
+    const query = { _id: parseInt(id) }; // statt: new ObjectId(id)
+
     serie = await collection.findOne(query);
 
     if (!serie) {
@@ -135,7 +137,9 @@ async function getGenre(id) {
   let genre = null;
   try {
     const collection = db.collection("genres");
-    const query = { _id: new ObjectId(id) }; // filter by id
+    //const query = { _id: new ObjectId(id) }; // filter by id
+    const query = { _id: parseInt(id) }; // statt: new ObjectId(id)
+
     genre = await collection.findOne(query);
 
     if (!genre) {

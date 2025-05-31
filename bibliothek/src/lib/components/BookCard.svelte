@@ -9,9 +9,7 @@
     </div>
     <div class="details">
       <div class="title">
-        <p class="title_link">
-          <a href={`/books/${book._id}/details`}>{book.title}</a>
-        </p>
+        <a class="title-link" href={`/books/${book._id}/details`}>{book.title}</a>
       </div>
       <div class="author">
         <p><strong>Autor: </strong> {book.author}</p>
@@ -39,18 +37,16 @@
   .card {
     height: 570px;
     background-color: #444;
-
-    transition:
-      transform 0.2s,
-      box-shadow 0.3s;
+    transition: transform 0.2s, box-shadow 0.3s;
     border: none;
     border-radius: 15px;
     overflow: hidden;
   }
+
   .card:hover {
     transform: scale(1.025);
-    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
   }
+
   .book-card {
     height: 100%;
     background-color: #444;
@@ -65,6 +61,7 @@
     object-fit: cover;
     background-color: #302f2f;
   }
+
   .details {
     padding: 1em;
     flex-grow: 1;
@@ -79,21 +76,24 @@
     margin-bottom: 0.2em;
   }
 
-  .btn-danger:hover {
-    background-color: #912530;
+  .title-link {
+    color: white;
+    text-decoration: none;
   }
 
-  p {
-    margin: 0.2em 0;
-  }
-  .title_link {
-    color: #fff;
+  .title-link:hover {
+    color: #ccc;
     text-decoration: none;
+  }
+
+  .author p,
+  .status p {
+    margin: 0.2em 0;
   }
 
   .button-row {
     display: flex;
-    gap: 0.5rem; /*abstand zwischen buttons */
+    gap: 0.5rem;
     padding: 0 0.8em 0.8em;
   }
 
