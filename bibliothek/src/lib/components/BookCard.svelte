@@ -10,10 +10,8 @@
     <div class="details">
       <div class="title">
         <!--<a href={"TODO" + book._id}>{book.title}</a>-->
-        <p>
-          <strong>Titel: </strong>
-          <a href={`/books/${book._id}`} class="book-title-link">{book.title}</a
-          >
+        <p class="title">
+          <a href={`/books/${book._id}/details`}>{book.title}</a>
         </p>
       </div>
       <div class="author">
@@ -22,9 +20,9 @@
       <div class="status">
         <p><strong>Status: </strong> {book.status}</p>
       </div>
-      <div class="rating">
+<!--       <div class="rating">
         <p><strong>Stars: </strong> {book.rating}</p>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="button-row">
