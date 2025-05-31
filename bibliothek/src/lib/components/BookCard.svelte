@@ -9,8 +9,7 @@
     </div>
     <div class="details">
       <div class="title">
-        <!--<a href={"TODO" + book._id}>{book.title}</a>-->
-        <p class="title">
+        <p class="title_link">
           <a href={`/books/${book._id}/details`}>{book.title}</a>
         </p>
       </div>
@@ -20,9 +19,6 @@
       <div class="status">
         <p><strong>Status: </strong> {book.status}</p>
       </div>
-<!--       <div class="rating">
-        <p><strong>Stars: </strong> {book.rating}</p>
-      </div> -->
     </div>
   </div>
   <div class="button-row">
@@ -32,7 +28,6 @@
       <input type="hidden" name="books" value="books" />
       <button type="submit" class="btn btn-danger w-100">Delete</button>
     </form>
-
     <!-- Update -->
     <form method="get" action={`/books/${book._id}`} class="button-form">
       <button type="submit" class="btn btn-warning w-100">Update</button>
@@ -91,14 +86,9 @@
   p {
     margin: 0.2em 0;
   }
-  
-  .book-title-link {
+  .title_link {
     color: #fff;
-    text-decoration: underline;
-  }
-
-  .book-title-link:hover {
-    color: #f2c94c;
+    text-decoration: none;
   }
 
   .button-row {

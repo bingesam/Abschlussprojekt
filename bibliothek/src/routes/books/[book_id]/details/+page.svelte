@@ -4,6 +4,7 @@
 </script>
 
 <h1>{book.title}</h1>
+<img class="img-fluid" src={book.image} alt={book.title} />
 
 <ul>
   <li><strong>Autor:</strong> {book.author}</li>
