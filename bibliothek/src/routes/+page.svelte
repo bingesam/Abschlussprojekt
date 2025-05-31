@@ -107,7 +107,7 @@
     }
 
     p{
-        font-size: 1.5em;
+        font-size: 1em;
         margin: 0;
         color: white;
     }
