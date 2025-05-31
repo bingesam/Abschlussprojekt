@@ -1,10 +1,14 @@
 import db from '$lib/db.js';
 
-/** @type {import('./$types').PageServerLoad} */
+
 export async function load({ params }) {
   const book = await db.getBook(params.book_id);
   const genres = await db.getGenres();
   const series = await db.getSeries();
+
+  if (!book) {
+    throw error(404, 'Buch nicht gefunden');
+  }
 
   return {
     book,
@@ -30,4 +34,3 @@ export const actions = {
     return { success: true };
   }
 };
-

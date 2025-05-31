@@ -10,7 +10,11 @@
     <div class="details">
       <div class="title">
         <!--<a href={"TODO" + book._id}>{book.title}</a>-->
-        <p><strong>Titel: </strong> {book.title}</p>
+        <p>
+          <strong>Titel: </strong>
+          <a href={`/books/${book._id}`} class="book-title-link">{book.title}</a
+          >
+        </p>
       </div>
       <div class="author">
         <p><strong>Autor: </strong> {book.author}</p>
@@ -23,20 +27,19 @@
       </div>
     </div>
   </div>
-<div class="button-row">
-  <!-- Delete -->
-  <form method="post" action="?/delete" class="button-form">
-    <input type="hidden" name="id" value={book._id} />
-    <input type="hidden" name="books" value="books" />
-    <button type="submit" class="btn btn-danger w-100">Delete</button>
-  </form>
+  <div class="button-row">
+    <!-- Delete -->
+    <form method="post" action="?/delete" class="button-form">
+      <input type="hidden" name="id" value={book._id} />
+      <input type="hidden" name="books" value="books" />
+      <button type="submit" class="btn btn-danger w-100">Delete</button>
+    </form>
 
-  <!-- Update -->
-  <form method="get" action={`/books/${book._id}`} class="button-form">
-    <button type="submit" class="btn btn-warning w-100">Update</button>
-  </form>
-</div>
-
+    <!-- Update -->
+    <form method="get" action={`/books/${book._id}`} class="button-form">
+      <button type="submit" class="btn btn-warning w-100">Update</button>
+    </form>
+  </div>
 </div>
 
 <style>
@@ -89,6 +92,15 @@
 
   p {
     margin: 0.2em 0;
+  }
+  
+  .book-title-link {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .book-title-link:hover {
+    color: #f2c94c;
   }
 
   .button-row {
