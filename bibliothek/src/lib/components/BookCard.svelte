@@ -26,10 +26,10 @@
       <input type="hidden" name="books" value="books" />
       <button type="submit" class="btn btn-danger w-100">Delete</button>
     </form>
-    <!-- Update -->
+    <!-- Update 
     <form method="get" action={`/books/${book._id}`} class="button-form">
       <button type="submit" class="btn btn-warning w-100">Update</button>
-    </form>
+    </form>-->
   </div>
 </div>
 
