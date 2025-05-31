@@ -20,16 +20,11 @@
     </div>
   </div>
   <div class="button-row">
-    <!-- Delete -->
     <form method="post" action="?/delete" class="button-form">
       <input type="hidden" name="id" value={book._id} />
       <input type="hidden" name="books" value="books" />
       <button type="submit" class="btn btn-danger w-100">Delete</button>
     </form>
-    <!-- Update 
-    <form method="get" action={`/books/${book._id}`} class="button-form">
-      <button type="submit" class="btn btn-warning w-100">Update</button>
-    </form>-->
   </div>
 </div>
 
@@ -103,9 +98,5 @@
 
   .btn-danger:hover {
     background-color: #912530;
-  }
-
-  .btn-warning:hover {
-    background-color: #b57a00;
   }
 </style>

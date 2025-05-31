@@ -48,14 +48,6 @@ export const actions = {
   }
 };
 
-
-/* export async function load() {
-  const series = await db.getSeries();
-  console.log("Anzahl der geladenen Serien:", series.length); // Füge dies hinzu
-  console.log("Geladene Serien (erste 5):", series.slice(0, 5)); // Füge dies hinzu
-  return { series };
-}
- */
 export async function load() {
   const series = await db.getSeries();
   const genres = await db.getGenres();

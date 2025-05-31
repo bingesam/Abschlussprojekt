@@ -1,18 +1,10 @@
-/* import db from '$lib/db.js';
-
-export async function load() {
-  return {
-    genres: await db.getGenres() 
-  };
-} */
-
 import db from '$lib/db.js';
 
 export async function load() {
   const genres = await db.getGenres();
 
   // get book counts per genre_id
-  const genreCounts = await db.getBookCountsByGenre(); // ← custom function you will write
+  const genreCounts = await db.getBookCountsByGenre();
 
   // merge counts into genres
   const enrichedGenres = genres.map((genre) => ({

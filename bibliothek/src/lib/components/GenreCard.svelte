@@ -37,7 +37,7 @@
   .genres-card {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* halbtransparentes Overlay */
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     display: flex;
     justify-content: center;

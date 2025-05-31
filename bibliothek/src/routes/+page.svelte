@@ -83,9 +83,9 @@
         font-size: 3em;
         font-weight: bold;
         color: white;
-        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        overflow: hidden; 
         border-right: 0.15em solid orange; /*typwriter cursor*/
-        white-space: nowrap; /*text auf einer single line*/
+        white-space: nowrap; /*text auf einer line*/
         margin: 0 auto;
         letter-spacing: 0.15em;
         animation:

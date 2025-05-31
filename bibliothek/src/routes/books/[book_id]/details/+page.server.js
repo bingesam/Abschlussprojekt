@@ -1,6 +1,5 @@
 import db from '$lib/db.js';
 
-/** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
   const book = await db.getBook(params.book_id);
 

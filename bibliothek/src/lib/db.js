@@ -35,12 +35,10 @@ async function getBook(id) {
 
     if (!book) {
       console.log("No book with id " + id);
-      // TODO: error handling
     } else {
       book._id = book._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
-    // TODO: error handling
     console.log(book.message);
   }
   return book;
@@ -52,9 +50,8 @@ async function createBook(book) {
   try {
     const collection = db.collection("books");
     const result = await collection.insertOne(book);
-    return result.insertedId.toString(); // convert ObjectId to String
+    return result.insertedId.toString(); // convert
   } catch (error) {
-    // TODO: error handling
     console.log(error.message);
   }
   return null;
@@ -75,7 +72,6 @@ async function deleteBook(id) {
       return id;
     }
   } catch (error) {
-    // TODO: error handling
     console.log(error.message);
   }
   return null;
@@ -101,16 +97,14 @@ async function getSerie(id) {
   let serie = null;
   try {
     const collection = db.collection("series");
-    //const query = { _id: new ObjectId(id) }; // filter by id
     const query = { _id: parseInt(id) }; // statt: new ObjectId(id)
 
     serie = await collection.findOne(query);
 
     if (!serie) {
       console.log("No serie with id " + id);
-      // TODO: error handling
     } else {
-      serie._id = serie._id.toString(); // convert ObjectId to String
+      serie._id = serie._id.toString(); //convert
     }
   } catch (error) {
     console.log(serie.message);
@@ -137,16 +131,14 @@ async function getGenre(id) {
   let genre = null;
   try {
     const collection = db.collection("genres");
-    //const query = { _id: new ObjectId(id) }; // filter by id
-    const query = { _id: parseInt(id) }; // statt: new ObjectId(id)
+    const query = { _id: parseInt(id) }; // statt new ObjectId(id)
 
     genre = await collection.findOne(query);
 
     if (!genre) {
       console.log("No genre with id " + id);
-      // TODO: error handling
     } else {
-      genre._id = genre._id.toString(); // convert ObjectId to String
+      genre._id = genre._id.toString(); // convert
     }
   } catch (error) {
     console.log(genre.message);
@@ -168,7 +160,6 @@ async function getBookCountsByGenre() {
     }
   ]).toArray();
 
-  // convert to a dictionary: { genre_id: count }
   return result.reduce((acc, curr) => {
     acc[curr._id] = curr.count;
     return acc;
