@@ -8,8 +8,8 @@ export async function load() {
 
   // merge counts into genres
   const enrichedGenres = genres.map((genre) => ({
-    ...genre,
-    count: genreCounts[genre._id] || 0
+    ...genre, //ursprüngliche genre felder
+    count: genreCounts[genre._id] || 0 //fallback auf 0
   }));
 
   return {

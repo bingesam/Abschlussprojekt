@@ -4,7 +4,8 @@
 </script>
 
 <h3>{book.title}</h3>
-<img src={book.image} alt={book.title} class="img-fluid book-image" />
+<img src={`/${book.image}`} alt={book.title} class="img-fluid book-image" />
+
 
 <ul>
     <li><strong>Autor:</strong> {book.author}</li>
@@ -16,9 +17,7 @@
 </ul>
 
 <div class="d-flex gap-2 mt-4">
-    <a class="btn btn-warning uniform-btn w-100" href={`/books/${book._id}`}
-        >Update</a
-    >
+    <a class="btn btn-warning uniform-btn w-100" href={`/books/${book._id}`}>Update</a>
     <a class="btn btn-secondary uniform-btn w-100" href="/books">Zurück</a>
 </div>
 

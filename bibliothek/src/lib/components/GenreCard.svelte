@@ -1,6 +1,6 @@
 <script>
   const { genres, count } = $props();
-  const backgroundImage = `/` + genres.name.toLowerCase().replace(/\s+/g, '_') + `_background.png`;
+  const backgroundImage = `/` + genres.name.toLowerCase().replace(/\s+/g, '_') + `_background.png`; //Stringbuilder,ersetzt alle Leerzeichen durch Unterstriche
 </script>
 
 <div class="card" style="background-image: url({backgroundImage});">

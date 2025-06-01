@@ -65,7 +65,7 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        height: 100vh;
+        height: 100vh; /* volle viewport-height */
         display: flex;
         align-items: center;
         justify-content: center;
