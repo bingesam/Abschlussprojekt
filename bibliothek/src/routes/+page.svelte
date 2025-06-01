@@ -1,17 +1,16 @@
 <script>
-    const {books, data} = $props();
+    const { books, data } = $props();
 </script>
 
-<div class="container mt-3">
-    <div class="hero-section svelte-16ktbxa">
-        <div class="hero-content svelte-16ktbxa">
-            <h1 class="typewriter svelte-16ktbxa">Welcome to MiniBibliothek</h1>
-            <p><i>Image generated with ChatGPT and DALL-E</i></p>
-        </div>
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="typewriter">Welcome to MiniBibliothek</h1>
+        <p><i>Image generated with ChatGPT and DALL-E</i></p>
     </div>
-</div>
+</section>
 
-<section class="stats-section svelte-16ktbxa">
+<!-- Counter Status Kacheln -->
+<section class="stats-section">
     <div class="row mt-5">
         <div class="col-md-3">
             <div
@@ -61,55 +60,34 @@
 </section>
 
 <style>
-    .hero-section {
+    .hero {
         background-image: url("/bib1.png");
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
         background-attachment: fixed;
         height: 100vh;
-        width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: white;
     }
 
     .hero-content {
-        text-align: center;
-        margin-top: 50px;
+        padding: 2rem;
+        border-radius: 1rem;
     }
 
     .typewriter {
-        font-size: 3em;
+        font-size: 2.5rem;
         font-weight: bold;
-        color: white;
-        overflow: hidden; 
-        border-right: 0.15em solid orange; /*typwriter cursor*/
-        white-space: nowrap; /*text auf einer line*/
-        margin: 0 auto;
-        letter-spacing: 0.15em;
-        animation:
-            typing 4s steps(30, end),
-            blink-caret 0.75s step-end infinite;
-    }
-    .col-md-3 {
-        margin-bottom: 3em;
-    }
-    .row {
-        margin-top: 5rem;
-    }
-    .card {
-        border-radius: 1rem;
-        transition: transform 0.2s ease;
-    }
-    .card:hover {
-        transform: scale(1.05);
-    }
-
-    p{
-        font-size: 1em;
-        margin: 0;
-        color: white;
+        animation: typing 3s steps(30, end);
+        white-space: nowrap;
+        overflow: hidden;
+        animation-fill-mode: forwards; /*dass der text auch nach der animation bleibt*/
+        border-right: 0.12em solid seagreen;
+        width: 0;
     }
 
     @keyframes typing {
@@ -126,5 +104,28 @@
         to {
             border-color: transparent;
         }
+        50% {
+            border-color: seagreen;
+        }
+    }
+
+    .col-md-3 {
+        margin-bottom: 3em;
+    }
+    .row {
+        margin-top: 5rem;
+    }
+    .card {
+        border-radius: 1rem;
+        transition: transform 0.2s ease;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    p {
+        font-size: 1em;
+        margin: 0;
+        color: white;
     }
 </style>
