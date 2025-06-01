@@ -4,7 +4,7 @@
 </script>
 
 <h3>{book.title}</h3>
-<img src={`/${book.image}`} alt={book.title} class="img-fluid book-image" />
+<img src={book.image} alt={book.title} class="img-fluid book-image" />
 
 <ul>
     <li><strong>Autor:</strong> {book.author}</li>

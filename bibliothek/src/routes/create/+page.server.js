@@ -1,5 +1,6 @@
 import db from "$lib/db";
 
+//hilfsfunktion zur bildauswahl basierend auf genreID
 function getImageByGenreId(genre_id) {
   const genres = {
     1: "romance",
@@ -19,14 +20,12 @@ function getImageByGenreId(genre_id) {
   return images[genre] || "/default.jpg";
 }
 
-
 export const actions = {
   create: async ({ request }) => {
     try {
       const data = await request.formData();
-
-      const genre_id = Number(data.get("genre"));
-      const series_id = Number(data.get("series"));
+      const genre_id = Number(data.get("genre_id"));
+      const series_id = Number(data.get("series_id"));
 
       const book = {
         title: data.get("title"),
@@ -48,11 +47,9 @@ export const actions = {
   }
 };
 
+
 export async function load() {
   const series = await db.getSeries();
   const genres = await db.getGenres();
   return { series, genres };
 }
-
-
-

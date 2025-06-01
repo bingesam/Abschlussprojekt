@@ -44,18 +44,31 @@ async function getBook(id) {
   return book;
 }
 
-//create new book entry
+
+//crete book
 async function createBook(book) {
-  book.image = "/science2.png";
+  const genreId = Number(book.genre_id);
+
+  const genreImages = {
+    1: "/crime2.png",
+    2: "/mystery2.png",
+    3: "/science2.png",
+    4: "/romance2.png"
+  };
+
+  book.image = genreImages[genreId] ?? "/default.png";
+
   try {
     const collection = db.collection("books");
     const result = await collection.insertOne(book);
-    return result.insertedId.toString(); // convert
+    return result.insertedId.toString();
   } catch (error) {
     console.log(error.message);
   }
+
   return null;
 }
+
 
 
 //delete book by id
@@ -148,23 +161,25 @@ async function getGenre(id) {
 
 
 // counter for books by genre
-async function getBookCountsByGenre() {
-  const books = await db.collection('books');
+function getImageByGenreId(genre_id) {
+  const genres = {
+    "1": "romance",
+    "2": "mystery",
+    "3": "crime",
+    "4": "science"
+  };
 
-  const result = await books.aggregate([
-    {
-      $group: {
-        _id: '$genre_id',
-        count: { $sum: 1 }
-      }
-    }
-  ]).toArray();
+  const genre = genres[genre_id]; // bleibt ein String
+  const images = {
+    crime: "/crime1.png",
+    mystery: "/mystery1.png",
+    romance: "/romance1.png",
+    science: "/science1.png"
+  };
 
-  return result.reduce((acc, curr) => {
-    acc[curr._id] = curr.count;
-    return acc;
-  }, {});
+  return images[genre] || "/default.jpg";
 }
+
 
 // Get books by rating
 async function getBooksByRating(stars) {
@@ -210,7 +225,6 @@ export default{
     getSerie,
     getGenres,
     getGenre,
-    getBookCountsByGenre,
     getBooksByRating,
     updateBook
 };

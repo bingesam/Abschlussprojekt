@@ -9,11 +9,11 @@
   <div class="row g-3">
     <div class="col">
       <label for="title" class="form-label">Titel</label>
-      <input name="title" type="text" class="form-control" placeholder="Titel eingeben" required/>
+      <input name="title" type="text" class="form-control" placeholder="Titel eingeben" required />
     </div>
     <div class="col">
       <label for="author" class="form-label">Autor</label>
-      <input name="author" type="text" class="form-control" placeholder="Autor eingeben" required/>
+      <input name="author" type="text" class="form-control" placeholder="Autor eingeben" required />
     </div>
   </div>
 
@@ -30,8 +30,8 @@
     </div>
 
     <div class="col">
-      <label for="genre" class="form-label">Genre</label>
-      <select name="genre" class="form-control" required>
+      <label for="genre_id" class="form-label">Genre</label>
+      <select name="genre_id" class="form-control" required>
         <option value="" disabled selected>Wähle das Genre...</option>
         {#each genres as g}
           <option value={g._id}>{g.name}</option>
@@ -43,7 +43,7 @@
   <div class="row g-3">
     <div class="col">
       <label for="series_id" class="form-label">Teil welcher Serie?</label>
-      <select name="series" class="form-control">
+      <select name="series_id" class="form-control">
         <option value="" disabled selected>Wähle die Bücherreihe...</option>
         {#each series as s}
           <option value={s._id}>{s.name}</option>
