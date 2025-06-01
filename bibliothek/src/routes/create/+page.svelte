@@ -9,23 +9,11 @@
   <div class="row g-3">
     <div class="col">
       <label for="title" class="form-label">Titel</label>
-      <input
-        name="title"
-        type="text"
-        class="form-control"
-        placeholder="Titel eingeben"
-        required
-      />
+      <input name="title" type="text" class="form-control" placeholder="Titel eingeben" required/>
     </div>
     <div class="col">
       <label for="author" class="form-label">Autor</label>
-      <input
-        name="author"
-        type="text"
-        class="form-control"
-        placeholder="Autor eingeben"
-        required
-      />
+      <input name="author" type="text" class="form-control" placeholder="Autor eingeben" required/>
     </div>
   </div>
 
@@ -65,7 +53,7 @@
 
     <div class="col">
       <label for="rating" class="form-label">Bewertung</label>
-      <select name="rating" class="form-control" required>
+      <select name="rating" class="form-control">
         <option value="" disabled selected>Wähle deine Bewertung...</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -85,9 +73,8 @@
   <div class="alert alert-danger mt-3">{form.error.message}</div>
 {/if}
 
-
 <style>
   .form-label {
-    margin-top: 1rem; 
+    margin-top: 1rem;
   }
 </style>
