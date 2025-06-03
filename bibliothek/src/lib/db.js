@@ -193,9 +193,21 @@ async function getBooksByRating(stars) {
   }));
 }
 
-// update book by id
+
 async function updateBook(id, updatedData) {
   try {
+    // Bild aktualisieren anhand der neuen genre_id
+    const genreId = Number(updatedData.genre_id);
+
+    const genreImages = {
+      1: "/crime2.png",
+      2: "/mystery2.png",
+      3: "/science2.png",
+      4: "/romance2.png"
+    };
+
+    updatedData.image = genreImages[genreId] ?? "/default.png";
+
     const collection = db.collection("books");
     const result = await collection.updateOne(
       { _id: new ObjectId(id) },
@@ -214,7 +226,6 @@ async function updateBook(id, updatedData) {
     return null;
   }
 }
-
 
 // Get book counts by genre
 async function getBookCountsByGenre() {
