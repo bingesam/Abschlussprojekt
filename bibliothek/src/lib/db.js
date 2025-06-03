@@ -200,10 +200,10 @@ async function updateBook(id, updatedData) {
     const genreId = Number(updatedData.genre_id);
 
     const genreImages = {
-      1: "/crime2.png",
-      2: "/mystery2.png",
-      3: "/science2.png",
-      4: "/romance2.png"
+      1: "crime2.png",
+      2: "mystery2.png",
+      3: "science2.png",
+      4: "romance2.png"
     };
 
     updatedData.image = genreImages[genreId] ?? "/default.png";
